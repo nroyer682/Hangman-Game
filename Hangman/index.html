@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="utf-8">
+        <meta name="author" content="Natalie Royer">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hangman Game</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="main.js"></script>
+    </head>
+    <body onload="activateButton()">
+        <div class="background">
+            <!-- Home Page -->
+            <section id="home" class="active">
+                <h1>Hangman</h1>
+                <img class="hang" src="https://t4.ftcdn.net/jpg/05/17/38/33/360_F_517383341_8nWEFfM1KL3K5LNTjUDrne3x0kZiuxuj.jpg" alt="Hangman" width="200" height="200">
+                <p><button id="playBtn">Play</button></p>
+            </section>
+
+            <!-- Categories -->
+             <section id="categories" class="hidden">
+                <div class="row1">
+                    <p><button id="randomBtn" class="categoryBtn"> Random </button></p>
+                    <p><button id="activityBtn" class="categoryBtn"> Activities </button></p>
+                    <p><button id="foodBtn" class="categoryBtn"> Food </button></p>
+                </div>
+                <div class="row2">
+                    <p><button id="verbBtn" class="categoryBtn"> Verbs </button></p>
+                    <p><button id="nounBtn" class="categoryBtn"> Nouns </button></p>
+                    <p><button id="animalBtn" class="categoryBtn"> Animals </button></p>
+                    <p><button id="nameBtn" class="categoryBtn"> Names </button></p>
+                </div>
+             </section>
+
+    
+            <!-- Game Area -->
+            <section id="game-area" class="hidden">
+                <div class="top-row">
+                    <div class="lives">
+                        <span id="lives"> 
+                            Lives:
+                            <span class="heart">❤️</span>
+                            <span class="heart">❤️</span>
+                            <span class="heart">❤️</span>
+                            <span class="heart">❤️</span>
+                            <span class="heart">❤️</span>
+                            <span class="heart">❤️</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="game-section">
+                    <!-- <img class="hangman-start" src="https://trident09.github.io/Hangman/Assets/hangman-0.svg" alt="Hangman Starting Area" width="200"> -->
+                    <canvas id="hangmanCanvas" width="250" height="250"></canvas>
+                </div>
+                <div>
+                    <span id="wordLength"></span>
+                    <div class="alphabet-container">
+                        <div class="row1">
+                            <p><button id="A" class="alphabetBtn"> A </button></p><p><button id="B" class="alphabetBtn"> B </button></p><p><button id="C" class="alphabetBtn"> C </button></p><p><button id="D" class="alphabetBtn"> D </button></p><p><button id="E" class="alphabetBtn"> E </button></p><p><button id="F" class="alphabetBtn"> F </button></p><p><button id="G" class="alphabetBtn"> G </button></p><p><button id="H" class="alphabetBtn"> H </button></p><p><button id="I" class="alphabetBtn"> I </button></p><p><button id="J" class="alphabetBtn"> J </button></p><p><button id="K" class="alphabetBtn"> K </button></p><p><button id="L" class="alphabetBtn"> L </button></p>
+                        </div>
+
+                        <div class="row2">
+                            <p><button id="M" class="alphabetBtn"> M </button></p><p><button id="N" class="alphabetBtn"> N </button></p><p><button id="O" class="alphabetBtn"> O </button></p><p><button id="P" class="alphabetBtn"> P </button></p><p><button id="Q" class="alphabetBtn"> Q </button></p><p><button id="R" class="alphabetBtn"> R </button></p><p><button id="S" class="alphabetBtn"> S </button></p><p><button id="T" class="alphabetBtn"> T </button></p><p><button id="U" class="alphabetBtn"> U </button></p><p><button id="V" class="alphabetBtn"> V </button></p><p><button id="W" class="alphabetBtn"> W </button></p><p><button id="X" class="alphabetBtn"> X </button></p><p><button id="Y" class="alphabetBtn"> Y </button></p><p><button id="Z" class="alphabetBtn"> Z </button></p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div id="winOverlay" class="overlay hidden">
+                    <div class="overlay-card">
+                        <h2>You Win!</h2>
+                        <p id="winWord"></p>
+                        <button id="winPlayAgainBtn">Play Again</button>
+                    </div>
+                </div>
+                
+                <div id="gameOverOverlay" class="overlay hidden">
+                    <div class="overlay-card">
+                        <h2>Game Over!</h2>
+                        <p id="gameWord"></p>
+                        <button id="playAgainBtn">Play Again</button>
+                    </div>
+                </div>
+                
+            </section> 
+        </div>
+    </body>
+</html>

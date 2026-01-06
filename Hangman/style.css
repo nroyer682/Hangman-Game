@@ -1,0 +1,171 @@
+html, body {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+body {
+    border-style: solid;
+    margin: 0;
+    text-align: center;
+    background: linear-gradient(120deg, rgb(230, 168, 255), rgb(220, 131, 255), rgb(197, 94, 238), rgb(182, 69, 226));
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+section {
+    width: 100%;
+    border-style: solid;
+    overflow: visible;
+}
+.background {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    min-height: 50%;
+    padding: 20px;
+    margin: 10%;
+    margin-top: 15%;
+    border-radius: 25px;
+    background-color: white;
+    border: solid 5px red;
+}
+
+.active {
+    display: block;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#playBtn {
+    background-color: rgb(197, 94, 238);
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    border-style: hidden;
+    font-size: 15px;
+    border-color: black;
+}
+
+#playBtn:hover {
+    background-color: rgb(182, 69, 226);
+}
+
+#hangman-start {
+    max-height: 200px;
+}
+
+
+.top-row {
+    display: flex;
+}
+
+.lives {
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+.alphabetBtn {
+    background-color:antiquewhite;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.row1 {
+    display: flex;
+    justify-content: center;
+}
+
+.row2 {
+    display: flex;
+    justify-content: center;
+}
+
+.categoryBtn {
+    background-color:cornflowerblue;
+    border-radius: 7px;
+    font-size: 25px;
+}
+
+.letter-disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+#hangmanCanvas {
+    border: 1px solid #ccc;
+    display: block;
+    margin: 20px auto;
+}
+
+.heart {
+    font-size: 18px;
+    margin-left: 2px;
+    transition: filter 0.3s, opacity 0.3s;
+}
+
+.heart.lost {
+    filter: grayscale(100%);
+    opacity: 0.4;
+}
+
+@keyframes flashRed {
+    0% {
+        filer: none;
+    }
+
+    50% {
+        filter: hue-rotate(320deg) saturate(300%);
+    }
+
+    1000% {
+        filter: none;
+    }
+}
+
+.heart.flash {
+    animation: flashRed 0.4s ease-in-out;
+}
+
+#game-area {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 999;
+}
+
+.overlay-card {
+    background: white;
+    padding: 20px 24px;
+    border-radius: 14px;
+    width: min(320px, 90%);
+    text-align: center;
+}
+
+#playAgainBtn {
+    margin-top: 12px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#winPlayAgainBtn {
+    margin-top: 12px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
